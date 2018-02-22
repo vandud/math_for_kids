@@ -8,7 +8,15 @@ body {
   height: 100%;
 }
 
-#status {
+#right_answer {
+  font-size: 3em;
+  color: #999;
+  display: block;
+  text-align: center;
+  font-family: 'Tahoma', sans-serif;
+}
+
+#not_right_answer {
   font-size: 3em;
   color: #999;
   display: block;
