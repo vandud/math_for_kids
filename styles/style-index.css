@@ -8,8 +8,8 @@ body {
   height: 100%;
 }
 
-#right_answer, #not_right_answer {
-  font-size: 3em;
+#rating, #right_answer {
+  font-size: 2em;
   color: #999;
   display: block;
   text-align: center;
