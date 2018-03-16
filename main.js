@@ -1,11 +1,23 @@
 var right_answer = parseInt(0, 10);
 var not_right_answer = parseInt(0, 10);
+var start_range = parseInt(0, 10);
+var end_range = parseInt(100, 10);
 var num_one = 0;
 var num_two = 0;
 var operation = '';
+var time_last = Date.now();
+
 
 function start() {
-
+  document.body.innerHTML = `<div id="right_answer">Правильных ответов: 0</div>
+                             <div id="not_right_answer">Не правильных ответов: 0</div>
+                             <div id="main_wrap">
+                               <div id="task"></div>
+                               <input id="answer" type="number" autofocus="autofocus">
+                               <button id="button" type="button" onclick="verify_answer()">OK</button>
+                             </div>
+                             <script type="text/javascript" src="main.js"></script>`
+  gen_expression();
 }
 
 function verify_answer() {
@@ -32,6 +44,9 @@ function verify_answer() {
     right_answer++;
     document.getElementById('right_answer').innerHTML = 'Правильных ответов: ' + right_answer;
     document.getElementById('answer').style.boxShadow = 'none';
+    document.getElementById('answer').value = '';
+    console.log(right_answer + ' ' + num_one + operation + num_two + ' ' + Math.floor((Date.now() - time_last) / 1000) + 'sec');
+    time_last = Date.now();
     gen_expression();
   } else {
     not_right_answer++;
@@ -49,11 +64,9 @@ function gen_expression() {
 
 (function() {
   document.querySelector('input').addEventListener('keydown', function(e) {
- if (e.keyCode === 13) {
- verify_answer();
- document.getElementById('answer').value = '';
- }
+    if (e.keyCode === 13) {
+      verify_answer();
+      document.getElementById('answer').value = '';
+    }
   });
 })();
-
-gen_expression();

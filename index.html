@@ -1,18 +1,23 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
   <meta charset="UTF-8">
   <link rel="stylesheet" href="styles/style-index.css">
   <link rel="stylesheet" href="styles/style-reset.css">
-  <title>Document</title>
+  <title>Math Train</title>
 </head>
 <body>
-  <div id="right_answer">Правильных ответов: 0</div>
-  <div id="not_right_answer">Не правильных ответов: 0</div>
+  <div id="task" style="width: 100%; text-align: center;">Выберите диапазон генерации чисел</div>
   <div id="main_wrap">
-    <div id="task"></div>
-    <input id="answer" type="number" autofocus="autofocus">
-    <button id="button" type="button" onclick="verify_answer()">OK</button>
+    <div style="font-family: 'Tahoma', sans-serif; font-size: 4em; color: #999;">От:&nbsp;</div>
+
+    <input id="start_range" type="number" autofocus="autofocus" style="display: block; width: 2em; font-size: 4em; color: #999;" value="0">
+
+    <div style="font-family: 'Tahoma', sans-serif; font-size: 4em; color: #999;">&nbsp;До:&nbsp;</div>
+
+    <input id="end_range" type="number" autofocus="autofocus" style="display: block; width: 2em; font-size: 4em; color: #999;" value="100">
+
+    <button id="button" type="button" onclick="start()">START</button>
   </div>
   <script type="text/javascript" src="main.js"></script>
 </body>
